@@ -1,0 +1,15 @@
+services:
+  xray:
+    image: teddysun/xray
+    container_name: akira-xray
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/etc/xray/config.json
+    ports:
+      - "1080:1080"
+    networks:
+      - akira-net
+
+networks:
+  akira-net:
+    external: true

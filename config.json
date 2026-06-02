@@ -1,0 +1,42 @@
+{
+  "inbounds": [
+    {
+      "port": 1080,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "172.67.73.39",
+            "port": 80,
+            "users": [
+              {
+                "id": "fc60147e-76b8-4bc5-b691-90b2da79e3d2",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/103.6.207.108-8080",
+          "headers": {
+            "Host": "nautica.navierr.dev"
+          }
+        }
+      }
+    }
+  ]
+}
