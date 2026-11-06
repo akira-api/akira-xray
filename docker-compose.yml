@@ -3,6 +3,8 @@ services:
     image: teddysun/xray
     container_name: akira-xray
     restart: unless-stopped
+    security_opt:
+      - apparmor=unconfined
     volumes:
       - ./config.json:/etc/xray/config.json
     ports:
